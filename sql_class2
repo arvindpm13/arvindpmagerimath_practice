@@ -1,1 +1,40 @@
+---creating table for constraints.
+create DATABASE employee_with_constraints_temp;
+use employee_with_constraints_temp;
+create table if not exists employee_temp
+(
+    id int not null,
+    name VARCHAR(50) not null,
+    salary double,
+    hiring_date date default('2023-01-01'),
+    constraint unique_id unique(id),
+    constraint salary_check check (salary > 1000)
+);
+insert into employee_temp values (3,'arvind',2000,'2023-01-02');
+insert into employee_temp values (12,'arvindpm',2000,null);
 
+
+---alter(ddl)
+create database test_alter;
+use test_alter;
+create table if not exists employee
+(
+    id INT,
+    NAME VARCHAR(50),
+    ADRESS VARCHAR(50),
+    CITY VARCHAR(50)
+);
+
+INSERT INTO employee values(1,'arvind','xyz','bangalore');
+select * from employee;
+
+---adding column
+alter table employee add DOB date;
+
+---changing datatype or modifying
+alter table employee modify COLUMN name varchar(100);
+
+show create table employee;
+
+---deleting column
+alter table employee drop city;
