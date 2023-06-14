@@ -107,3 +107,33 @@ select distinct(cust_id) as diff_ids from customer;
 
   ---counting different rec in column
 select count(distinct name) as distinct_name from customer;
+
+
+
+---write a query to display a  --- Increment salary of each employee by 20% and display final result with new salary
+
+create table if not exists employee(
+    id int,
+    name VARCHAR(50),
+    age int,
+    hiring_date date,
+    salary int,
+    city varchar(50)
+);
+
+insert into employee values(1,'Shashank', 24, '2021-08-10', 10000, 'Lucknow');
+
+insert into employee values(2,'Rahul', 25, '2021-08-10', 20000, 'Khajuraho');
+
+insert into employee values(3,'Sunny', 22, '2021-08-11', 11000, 'Bangalore');
+
+insert into employee values(5,'Amit', 25, '2021-08-11', 12000, 'Noida');
+
+insert into employee values(1,'Puneet', 26, '2021-08-12', 50000, 'Gurgaon');
+
+
+SELECT id,
+       name,
+       salary as old_salary,
+       (salary+salary*0.2) as new_salary
+       from employee;
