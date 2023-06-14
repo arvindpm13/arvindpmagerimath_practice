@@ -93,3 +93,17 @@ create table orders
 
     constraint fk foreign key (customer_id) references customer(cust_id)
 );
+---count
+select * from customer;
+
+---changing name of column in result table
+select cust_id, name as full_name from customer;
+
+---counts of total number of record
+ select count(*) as record_numbers from customer;
+
+---selecting diff rec in a coulmn
+select distinct(cust_id) as diff_ids from customer;
+
+  ---counting different rec in column
+select count(distinct name) as distinct_name from customer;
