@@ -137,3 +137,11 @@ SELECT id,
        salary as old_salary,
        (salary+salary*0.2) as new_salary
        from employee;
+
+select * from employee where city = 'bangalore';
+
+update employee set city = 'bangalore' where city = 'gurgaon';
+
+delete from employee where city = 'bangalore';
+
+select * from employee;
