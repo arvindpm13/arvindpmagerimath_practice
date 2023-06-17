@@ -145,3 +145,6 @@ update employee set city = 'bangalore' where city = 'gurgaon';
 delete from employee where city = 'bangalore';
 
 select * from employee;
+
+---write a query to display details of the employee who is getting maximum salary
+select * from employee order by salary desc limit 1;
